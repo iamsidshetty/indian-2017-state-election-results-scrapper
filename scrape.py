@@ -41,11 +41,16 @@ def main():
 	html = requests.get(url).content
 
 	# all the states that went to election in 2017
-	# states = { 'GA' : 'S05', 'MR' : 'S14', 'PB' : 'S19', 'UP' : 'S24', 'UT' : 'S28' }
-	states = { 'UP' : 'S24' }
+	states = { 'GA' : 'S05', 'MR' : 'S14', 'PB' : 'S19', 'UP' : 'S24', 'UT' : 'S28' }
+	# states = { 'UP' : 'S24' }
+	# states = { 'GA' : 'S05' }
+	# states = { 'MR' : 'S14' }
+	# states = { 'PB' : 'S19' }
+	# states = { 'UT' : 'S28' }
+
 
 	# open a file to write
-	datafile = open("./up_election_results_data.csv", "wb")
+	datafile = open("./aggregated_election_results_data.csv", "wb")
 	writer = csv.writer(datafile)
 	writer.writerow(["State", "Constituency", "Candidate", "Party", "Votes"])
 
