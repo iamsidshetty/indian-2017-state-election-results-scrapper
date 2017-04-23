@@ -17,4 +17,4 @@ Once you have all the dependecies installed, run
 | ------------- |:-------------:| -----------------:|--------------:|--------:|
 | UP			|Agra Cantt.	| DR. GIRRAJ SINGH DHARMESH |Bharatiya Janata Party | 113178 |			
 | UP			|Agra Cantt.	| GUTIYARI LAL DUWESH |Bahujan Samaj Party | 66853 |		
-| UP			|Agra Cantt.	| MAMTA KAUDAN |BSamajwadi Party | 64683 |		
+| UP			|Agra Cantt.	| MAMTA KAUDAN |Samajwadi Party | 64683 |		
