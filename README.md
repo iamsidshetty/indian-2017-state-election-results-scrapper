@@ -7,9 +7,9 @@ This repo provides you with the python script to crawl 2017 state election data 
 + Install [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
 + Install [Requests](http://docs.python-requests.org/en/latest/)
 
-Once you have all the dependecies installed, run
+Once you have all the dependencies installed, run
 
-`python scrape.p`
+	`python scrape.p`
 
 ### Output Data Format
 
