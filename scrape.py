@@ -14,7 +14,7 @@ def get_constituencies(html, stateID):
 	
 	return all_constituency_info_list
 
-def get_constituency_result_info(filetowrite, constituency_url, constituency_name, state):
+def get_constituency_result_info(writer, constituency_url, constituency_name, state):
 
 	getinfo = BeautifulSoup(requests.get(constituency_url).content)
 
@@ -29,7 +29,6 @@ def get_constituency_result_info(filetowrite, constituency_url, constituency_nam
 		all_candidates.append(candidate)
 	
 	# write to a file
-	writer = csv.writer(filetowrite)
 	writer.writerows(all_candidates)
 
 
@@ -42,10 +41,13 @@ def main():
 	html = requests.get(url).content
 
 	# all the states that went to election in 2017
-	states = { 'GA' : 'S05', 'MR' : 'S14', 'PB' : 'S19', 'UP' : 'S24', 'UT' : 'S28' }
+	# states = { 'GA' : 'S05', 'MR' : 'S14', 'PB' : 'S19', 'UP' : 'S24', 'UT' : 'S28' }
+	states = { 'UP' : 'S24' }
 
 	# open a file to write
-	datafile = open("./election_results_data.csv", "wb")
+	datafile = open("./up_election_results_data.csv", "wb")
+	writer = csv.writer(datafile)
+	writer.writerow(["State", "Constituency", "Candidate", "Party", "Votes"])
 
 	# get all constituencies
 	for each_state, code in states.iteritems():
@@ -58,12 +60,12 @@ def main():
 			# 32 Wangkhem 
 			# 22 Wangoi 
 			# 14 Yaiskul 
-			
+
 		for constituency_data in all_constituency_info_list:
 			if constituency_data is not '':
 				constituency_data_split = constituency_data.split(',')
 				print "\t Starting with constituency --" + constituency_data_split[1]
-				get_constituency_result_info(datafile, base_url + code + constituency_data_split[0] + ".htm?ac=" + constituency_data_split[0], constituency_data_split[1], each_state)
+				get_constituency_result_info(writer, base_url + code + constituency_data_split[0] + ".htm?ac=" + constituency_data_split[0], constituency_data_split[1], each_state)
 
 if __name__ == "__main__": 
 	main()
