@@ -10,3 +10,11 @@ This repo provides you with the python script to crawl 2017 state election data 
 Once you have all the dependecies installed, run
 
 `python scrape.p`
+
+### Output Data Format
+
+| State         | Constituency  | Candidate  		| Party 		| Votes   |
+| ------------- |:-------------:| -----------------:|--------------:|--------:|
+| UP			|Agra Cantt.	| DR. GIRRAJ SINGH DHARMESH |Bharatiya Janata Party | 113178 |			
+| UP			|Agra Cantt.	| GUTIYARI LAL DUWESH |Bahujan Samaj Party | 66853 |		
+| UP			|Agra Cantt.	| MAMTA KAUDAN |BSamajwadi Party | 64683 |		
